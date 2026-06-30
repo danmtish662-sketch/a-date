@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="card">
+        <h1>Will you go on a date with me?</h1>
+        <button onclick="nextPage()">Yes 💖</button>
+        <button id="noButton" onmouseover="moveButton()">No ☹️</button>
+    </div>
+    <script src="script.js"></script>body { display: flex; justify-content: center; align-items: center; height: 100vh; background: #fff0f5; }
+#card { text-align: center; background: white; padding: 50px; border-radius: 20px; }
+#noButton { position: absolute; } /* This allows the button to move */
+button { padding: 10px 20px; margin: 10px; cursor: pointer; }
+  
+</body>// Make the 'No' button move to a random position
+function moveButton() {
+    const btn = document.getElementById("noButton");
+    btn.style.top = Math.random() * 80 + "vh";
+    btn.style.left = Math.random() * 80 + "vw";
+}
+
+// Redirect after clicking 'Yes'
+function nextPage() {
+    window.location.href = "success.html"; // You would create this file next
+}
+  
+</html>
